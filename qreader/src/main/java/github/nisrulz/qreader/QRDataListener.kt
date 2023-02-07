@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package github.nisrulz.projectqreader;
-
-import static org.junit.Assert.*;
-
-import org.junit.*;
+package github.nisrulz.qreader
 
 /**
- * To work on unit tests, switch the Test Artifact in the Build Variants view.
+ * The interface Qr data listener.
  */
-public class ExampleUnitTest {
+interface QRDataListener {
+    /**
+     * On detected.
+     *
+     * @param data the data
+     */
+    // Called on a different thread (Be careful)
+    fun onDetected(data: String?)
 
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
+    // Called on the main thread
+    fun onReadQrError(exception: Exception?)
 }

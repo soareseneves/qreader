@@ -14,19 +14,11 @@
  * limitations under the License.
  */
 
-package github.nisrulz.projectqreader;
+package github.nisrulz.projectqreader
 
-import static org.junit.Assert.*;
+interface RPResultListener {
 
-import org.junit.*;
+    fun onPermissionDenied()
 
-/**
- * To work on unit tests, switch the Test Artifact in the Build Variants view.
- */
-public class ExampleUnitTest {
-
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
+    fun onPermissionGranted()
 }
